@@ -8,7 +8,7 @@ from .models import Event
 
 def add_event(request):
     if request.method == 'POST':
-        form = EventForm(request.POST)
+        form = EventForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return redirect('event_list')  # Redirect to the event list page
@@ -18,5 +18,5 @@ def add_event(request):
 
 
 def event_list(request):
-    events = Event.objects.all()
+    events = Event.objects.order_by('event_time')
     return render(request, 'events/event_list.html', {'events': events})

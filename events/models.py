@@ -5,7 +5,7 @@ class Event(models.Model):
     event_description = models.TextField()
     event_time = models.DateTimeField()
     event_location = models.CharField(max_length=255)
-    event_image = models.ImageField(upload_to='event_images/', default='default_image.jpg')  # New field for the event image
+    event_image = models.ImageField(upload_to='event_images/', default='event_images/default_image.webp')  # New field for the event image
 
     class Meta:
         app_label = 'events'
