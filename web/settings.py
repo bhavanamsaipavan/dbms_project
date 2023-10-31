@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DJANGO_ALLOWED_HOSTS = ['mysql.connector']
+
 
 # Application definition
 
@@ -71,13 +73,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'web.wsgi.application'
 
 
+# Define the directory where uploaded files (including images) will be stored on the server
+MEDIA_ROOT = BASE_DIR /'media'
+  # Or specify your preferred directory
+
+# Define the URL that will serve the media files during development
+MEDIA_URL = '/media/'  # Or any URL path you prefer
+
+
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'MY_EVENTS',
+        'USER': 'root',
+        'PASSWORD': 'v1i2n3a4y5',
+        'HOST': 'localhost',  # Or your database host
+        'PORT': '3306',      # Default MySQL port
     }
 }
 
@@ -122,3 +144,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

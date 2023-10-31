@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event List</title>
+    <link rel="stylesheet" href="{% static 'events/event_list.css' %}">
+</head>
+<body>
+    <h1>List of Events</h1>
+    <ul class="event-list">
+        {% for event in events %}
+            <li class="event-item">
+                <img src="/media/{{ event.event_image }}" alt="{{ event.event_name }} Image">
+                <div class="event-details">
+                    <h2>{{ event.event_name }}</h2>
+                    <p class="event-description">{{ event.event_description }}</p>
+                    <p><b>{{ event.event_time }} {{ event.event_location }}</b></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
