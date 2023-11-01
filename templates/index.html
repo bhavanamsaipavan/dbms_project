@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="{% static 'images/concert.jpg' %}" type="image/x-icon" />
+
+    <!--=============== font-awesome ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{% static 'styleindex.css' %}">
+
+    <title>UTOPIA</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <img src="{% static "images/pngegg.png" %}" alt="logo" />
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="active">
+              <a href="#" class="nav__link">Home</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="/events" class="nav__link">Events</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">Competitions</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">Accomodation</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="contactus.html" class="nav__link">Contact-us</a>
+            </li>
+          </ul>
+          <div class="nav__buttons">
+            <!-- <a href="#" class="nav__button-link">Login</a> -->
+            <a href="login.html" class="nav__button-ghost">Login</a>
+          </div>
+          <div class="nav__close" id="nav-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <!-- toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home">
+        <div class="home__container container">
+          <div class="home__content">
+            <div class="home__data">
+              <h3 class="home__subtitle">A LIFE TIME EXPERIENCE</h3>
+              <h1 class="home__title">
+                ENTERTAINMENT <br />
+                DISTRICT
+              </h1>
+              <p class="home__description">Events To Remember</p>
+              <a href="#" class="home__button"> Get Ticket </a>
+            </div>
+            <img src="{% static "images/bird-1.svg" %}" alt="image" class="home__bird-1" />
+            <img src="{% static "images/bird-2.svg" %}" alt="image" class="home__bird-2" />
+          </div>
+          <div class="home__images">
+            <img src="{% static "images/img-4.svg" %}" alt="image" class="home__img-4" />
+            <img src="{% static "images/img-3.svg" %}" alt="image" class="home__img-3" />
+            <img src="{% static "images/img-2.svg" %}" alt="image" class="home__img-2" />
+            <img src="{% static "images/img-1.svg" %}" alt="image" class="home__img-1" />
+          </div>
+        </div>
+      </section>
+      <div class="abc">
+        <div class="line line1">
+          <img src="{% static "images/concert2.jpg" %}" alt="" class="des__img-1 des__img" />
+          <div class="context">
+            <h1>Vibrant Entertainment Hub</h1>
+            <p>
+              Experience diverse entertainment—concerts, dances, seminars,
+              games, and a food feast—uniting technology and culture for an
+              immersive event.
+            </p>
+          </div>
+        </div>
+        <div class="line line2">
+          <div class="context">
+            <h1>Dynamic Show Management</h1>
+            <p>
+              Central India's largest event enables hosts to manage shows
+              effectively, boosting reach and engagement.
+            </p>
+          </div>
+          <img src="{% static "images/concert.jpg" %}" alt="" class="des__img-2 des__img" />
+        </div>
+        <div class="line">
+          <img src="{% static "images/seminar.avif" %}" alt="" class="des__img-3 des__img" />
+          <div class="context">
+            <h1>Startup Spotlight</h1>
+            <p>
+              Showcasing pioneering startups, offering exposure and
+              collaboration opportunities within a diverse audience.
+            </p>
+          </div>
+        </div>
+        <div class="line joinus">
+          <div class="context">
+            <h1>Interested in hosting with us?</h1>
+            <p>
+              Become a part of our team. Contact us for further details.
+            </p>
+          </div>
+          <a href="contactus.html" class="home__button join"> Contact us </a>
+        </div>
+
+        <p class="spon">SPONSERS</p>
+        <div class="logos">
+          <div class="logos-slide">
+            <div class="slide"><img src="{% static "images/sponsers/3m.svg" %}" /></div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/barstool-store.svg" %}"  />
+            </div>
+            <div class="slide"><img src="{% static "images/sponsers/budweiser.svg" %}"  /></div>
+            <div class="slide"><img src="{% static "images/sponsers/buzzfeed.svg" %}"  /></div>
+            <div class="slide"><img src="{% static "images/sponsers/forbes.svg" %}" /></div>
+            <div class="slide"><img src="{% static "images/sponsers/macys.svg" %}" /></div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/menshealth.svg" %}" />
+            </div>
+            <div class="slide"><img src="{% static "images/sponsers/mrbeast.svg" %}" /></div>
+            <div class="slide"><img src="{% static "images/sponsers/3m.svg" %}" /></div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/barstool-store.svg" %}" />
+            </div>
+            <div class="slide"><img src="{% static "images/sponsers/budweiser.svg" %}" /></div>
+            <div class="slide"><img src="{% static "images/sponsers/buzzfeed.svg" %}" /></div>
+            <div class="slide"><img src="{% static "images/sponsers/forbes.svg" %}" /></div>
+            <div class="slide"><img src="{% static "images/sponsers/macys.svg" %}" /></div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/menshealth.svg" %}" />
+            </div>
+            <div class="slide"><img src="{% static "images/sponsers/mrbeast.svg" %}" /></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="about">
+        <p class="descp">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. A possimus
+          assumenda dolorum delectus, iure, mollitia placeat neque nulla natus
+          accusamus asperiores laboriosam, animi eaque quidem culpa. Sit minima
+          omnis accusamus commodi dolorum reiciendis debitis.
+        </p>
+      </div>
+      <div class="social">
+        <a href="#" class="icon">
+          <i class="fa-brands fa-linkedin"></i>
+          <h3>Linked In</h3>
+        </a>
+        <a href="https://www.instagram.com/vinay_c09/" class="icon">
+          <i class="fa-brands fa-instagram"></i>
+          <h3>instagram</h3>
+        </a>
+        <a href="#" class="icon">
+          <i class="fa-brands fa-twitter"></i>
+          <h3>Twitter</h3>
+        </a>
+        <a href="#" class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <h3>Facebook</h3>
+        </a>
+      </div>
+      <div class="devloper">
+        <p class="info">
+          Contact-us <br />
+          <i class="fa-solid fa-user"></i> Dark Soul <br />
+          web and over all codinator <br />
+          <i class="fa-solid fa-phone"></i> 6301780884 <br />
+          <i class="fa-solid fa-envelope"></i>
+          cse220001021@iiti.ac.in
+        </p>
+      </div>
+      <div class="copyright">
+        Hawk-Eye | All rights reserved <i class="bx bx-copyright"></i> 2023
+      </div>
+    </footer>
+
+    <!--=============== GSAP ===============-->
+    <script src="{% static 'gsap.min.js' %}"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
