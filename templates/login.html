@@ -1,3 +1,5 @@
+<!-- login.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +12,29 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="assets/stylelogin.css" />
+    <link rel="stylesheet" href="{% static 'stylelogin.css' %}">
     <title>Login </title>
 </head>
 <body>
     <div class="wrraper">
-        <a href="index.html" style ="color:#213d55;"><i class="fa-solid fa-house"></i></a>
-        <form action="">
+        <a href="{% url 'HOME' %}" style ="color:#213d55;"><i class="fa-solid fa-house"></i></a>
+        <form action="" method="post">
             <h1>Login</h1>
+            
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
-                <i class="fa-solid fa-user"></i>
+                <input type="text" name="username" placeholder="Username" >
+                <i class="fas fa-user"></i>
             </div>
+            {% for error in form.username.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
-                <i class="fa-solid fa-lock"></i>
-            </div> 
+                <input type="password" name="password" placeholder="Password">
+                <i class="fas fa-lock"></i>
+            </div>
+            {% for error in form.password.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
             <div class="remember-forgot">
                 <label >
                     <input type="checkbox"> Remember me
@@ -35,9 +44,10 @@
             <button type="submit" class="btn">Login</button>
             <div class="register-link">
                 <p>Don't have an account? 
-                    <a href="#">Register</a>
+                    <a href="{% url 'register' %}">Register</a>
                 </p>
             </div>
+            {% csrf_token %}
         </form>
     </div>
 </body>

@@ -64,7 +64,7 @@ body {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
   background-color: #001032;
-  background-image: url("backgroundnight2.jpg");
+  background-image: url("images/backgroundnight2.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: 100vw 100vh;

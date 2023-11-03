@@ -69,11 +69,11 @@ body {
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-  background: url(loginbg.jpg) no-repeat;
+  background: url(images/loginbg.jpg) no-repeat;
   background-size: cover;
   background-position: center;
 }
-
+  
 .header {
   position: fixed;
   width: 100%;

@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'events',
+    'user_app',
+    'PaymentApp',
+    'paypal.standard.ipn',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
@@ -144,8 +147,16 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+
+LOGIN_REDIRECT_URL = ''
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+PAYPAL_RECEIVER_EMAIL = 'darksoul@business.example.com' # where cash is paid into
+PAYPAL_TEST = True
+
+# \PAYPAL_BUY_BUTTON_IMAGE = 'https://res.cloudinary.com/the-proton-guy/image/upload/v1685882223/paypal-PhotoRoom_v9pay7.png'

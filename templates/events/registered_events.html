@@ -1,0 +1,9 @@
+<!-- HTML to display the events a user has registered for -->
+<h1>Events Registered by {{ request.user.username }}</h1>
+<ul>
+    {% for event in registered_events %}
+        <li>{{ event.event_name }}</li>
+    {% empty %}
+        <li>No events registered yet.</li>
+    {% endfor %}
+</ul>

@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="{% static 'images/concert.jpg' %}" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/concert.jpg' %}"
+      type="image/x-icon"
+    />
 
     <!--=============== font-awesome ===============-->
     <link
@@ -18,9 +22,9 @@
     />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="{% static 'styleindex.css' %}">
+    <link rel="stylesheet" href="{% static 'styleindex.css' %}" />
 
-    <title>UTOPIA</title>
+    <title>Entertainment District</title>
   </head>
   <body>
     <!--==================== HEADER ====================-->
@@ -40,20 +44,20 @@
             </li>
 
             <li class="nav__item">
-              <a href="#" class="nav__link">Competitions</a>
-            </li>
-
-            <li class="nav__item">
               <a href="#" class="nav__link">Accomodation</a>
             </li>
 
             <li class="nav__item">
-              <a href="contactus.html" class="nav__link">Contact-us</a>
+              <a href="/contactus" class="nav__link">Contact-us</a>
             </li>
           </ul>
           <div class="nav__buttons">
             <!-- <a href="#" class="nav__button-link">Login</a> -->
-            <a href="login.html" class="nav__button-ghost">Login</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="nav__button-ghost">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="nav__button-ghost">Login</a>
+            {% endif %}
           </div>
           <div class="nav__close" id="nav-close">
             <i class="fa-solid fa-xmark"></i>
@@ -81,20 +85,26 @@
               <p class="home__description">Events To Remember</p>
               <a href="#" class="home__button"> Get Ticket </a>
             </div>
-            <img src="{% static "images/bird-1.svg" %}" alt="image" class="home__bird-1" />
-            <img src="{% static "images/bird-2.svg" %}" alt="image" class="home__bird-2" />
+            <img src="{% static "images/bird-1.svg" %}" alt="image"
+            class="home__bird-1" /> <img src="{% static "images/bird-2.svg" %}"
+            alt="image" class="home__bird-2" />
           </div>
           <div class="home__images">
-            <img src="{% static "images/img-4.svg" %}" alt="image" class="home__img-4" />
-            <img src="{% static "images/img-3.svg" %}" alt="image" class="home__img-3" />
-            <img src="{% static "images/img-2.svg" %}" alt="image" class="home__img-2" />
-            <img src="{% static "images/img-1.svg" %}" alt="image" class="home__img-1" />
+            <img src="{% static "images/img-4.svg" %}" alt="image"
+            class="home__img-4" /> 
+            <img src="{% static "images/img-3.svg" %}" alt="image" 
+            class="home__img-3" /> 
+            <img src="{% static "images/img-2.svg" %}" alt="image" 
+            class="home__img-2" /> 
+            <img src="{% static "images/img-1.svg" %}" alt="image"
+            class="home__img-1" />
           </div>
         </div>
       </section>
       <div class="abc">
         <div class="line line1">
-          <img src="{% static "images/concert2.jpg" %}" alt="" class="des__img-1 des__img" />
+          <img src="{% static "images/concert2.jpg" %}" alt="" class="des__img-1
+          des__img" />
           <div class="context">
             <h1>Vibrant Entertainment Hub</h1>
             <p>
@@ -112,10 +122,12 @@
               effectively, boosting reach and engagement.
             </p>
           </div>
-          <img src="{% static "images/concert.jpg" %}" alt="" class="des__img-2 des__img" />
+          <img src="{% static "images/concert.jpg" %}" alt="" class="des__img-2
+          des__img" />
         </div>
         <div class="line">
-          <img src="{% static "images/seminar.avif" %}" alt="" class="des__img-3 des__img" />
+          <img src="{% static "images/seminar.avif" %}" alt="" class="des__img-3
+          des__img" />
           <div class="context">
             <h1>Startup Spotlight</h1>
             <p>
@@ -127,40 +139,62 @@
         <div class="line joinus">
           <div class="context">
             <h1>Interested in hosting with us?</h1>
-            <p>
-              Become a part of our team. Contact us for further details.
-            </p>
+            <p>Become a part of our team. Contact us for further details.</p>
           </div>
-          <a href="contactus.html" class="home__button join"> Contact us </a>
+          <a href="/contactus" class="home__button join"> Contact us </a>
         </div>
 
         <p class="spon">SPONSERS</p>
         <div class="logos">
           <div class="logos-slide">
-            <div class="slide"><img src="{% static "images/sponsers/3m.svg" %}" /></div>
             <div class="slide">
-              <img src="{% static "images/sponsers/barstool-store.svg" %}"  />
+              <img src="{% static "images/sponsers/3m.svg" %}" />
             </div>
-            <div class="slide"><img src="{% static "images/sponsers/budweiser.svg" %}"  /></div>
-            <div class="slide"><img src="{% static "images/sponsers/buzzfeed.svg" %}"  /></div>
-            <div class="slide"><img src="{% static "images/sponsers/forbes.svg" %}" /></div>
-            <div class="slide"><img src="{% static "images/sponsers/macys.svg" %}" /></div>
-            <div class="slide">
-              <img src="{% static "images/sponsers/menshealth.svg" %}" />
-            </div>
-            <div class="slide"><img src="{% static "images/sponsers/mrbeast.svg" %}" /></div>
-            <div class="slide"><img src="{% static "images/sponsers/3m.svg" %}" /></div>
             <div class="slide">
               <img src="{% static "images/sponsers/barstool-store.svg" %}" />
             </div>
-            <div class="slide"><img src="{% static "images/sponsers/budweiser.svg" %}" /></div>
-            <div class="slide"><img src="{% static "images/sponsers/buzzfeed.svg" %}" /></div>
-            <div class="slide"><img src="{% static "images/sponsers/forbes.svg" %}" /></div>
-            <div class="slide"><img src="{% static "images/sponsers/macys.svg" %}" /></div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/budweiser.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/buzzfeed.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/forbes.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/macys.svg" %}" />
+            </div>
             <div class="slide">
               <img src="{% static "images/sponsers/menshealth.svg" %}" />
             </div>
-            <div class="slide"><img src="{% static "images/sponsers/mrbeast.svg" %}" /></div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/mrbeast.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/3m.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/barstool-store.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/budweiser.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/buzzfeed.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/forbes.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/macys.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/menshealth.svg" %}" />
+            </div>
+            <div class="slide">
+              <img src="{% static "images/sponsers/mrbeast.svg" %}" />
+            </div>
           </div>
         </div>
       </div>

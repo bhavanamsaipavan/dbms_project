@@ -1,0 +1,58 @@
+/* Reset some default browser styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the hero section */
+.hero {
+    position: relative;
+    height: 50vh;
+    width: 10vw;
+    overflow: hidden;
+}
+
+/* Styling for the hero image */
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Styling for the hero content */
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Text color for better visibility */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 1em;
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Text color on the button */
+    border: none;
+    cursor: pointer;
+}

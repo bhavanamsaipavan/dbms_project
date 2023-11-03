@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,27 +11,23 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="assets/stylecontact.css" />
+    <link rel="stylesheet" href="{% static 'stylecontact.css' %}" />
     <title>Login </title>
 </head>
 <body>
     <header class="header" id="header">
         <nav class="nav container">
           <a href="#" class="nav__logo">
-            <img src="assets/pngegg.png" alt="logo" />
+            <img src="{% static "images/pngegg.png" %}" alt="logo" />
           </a>
           <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="index.html" class="nav__link">Home</a>
+                <a href="{% url 'HOME' %}" class="nav__link">Home</a>
               </li>
   
               <li class="nav__item">
-                <a href="events.html" class="nav__link">Events</a>
-              </li>
-  
-              <li class="nav__item">
-                <a href="#" class="nav__link">Competitions</a>
+                <a href="{% url 'event_list' %}" class="nav__link">Events</a>
               </li>
   
               <li class="nav__item">
@@ -38,12 +35,15 @@
               </li>
   
               <li class="active">
-                <a href="contactus.html" class="nav__link">Contact-us</a>
+                <a href="#" class="nav__link">Contact-us</a>
               </li>
             </ul>
             <div class="nav__buttons">
-              <!-- <a href="#" class="nav__button-link">Login</a> -->
-              <a href="login.html" class="nav__button-ghost">Login</a>
+              {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="nav__button-ghost">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="nav__button-ghost">Login</a>
+            {% endif %}
             </div>
             <div class="nav__close" id="nav-close">
               <i class="fa-solid fa-xmark"></i>

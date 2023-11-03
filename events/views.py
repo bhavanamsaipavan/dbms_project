@@ -2,10 +2,13 @@
 
 # Create your views here.
 # events/views.py
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from .forms import EventForm
-from .models import Event
+from .models import Event,Registration
+from django.contrib.auth.decorators import login_required
+from PaymentApp import views
 
+@login_required
 def add_event(request):
     if request.method == 'POST':
         form = EventForm(request.POST,request.FILES)
@@ -20,3 +23,38 @@ def add_event(request):
 def event_list(request):
     events = Event.objects.order_by('event_time')
     return render(request, 'events/event_list.html', {'events': events})
+
+@login_required
+def event_detail(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    user = request.user
+
+    # Check if the user is already registered for the event
+    already_registered = Registration.objects.filter(user=user, event=event).exists()
+
+    return render(request, 'events/event_details.html', {
+        'event': event,
+        'already_registered': already_registered
+    })
+    
+    
+@login_required
+def register_for_event(request, event_id):
+    event = Event.objects.get(pk=event_id)
+    user = request.user
+
+    # Check if the user is already registered for the event
+    if Registration.objects.filter(user=user, event=event).exists():
+        # You may want to display a message saying the user is already registered
+        pass
+    else:
+        return views.CheckOut(request, event_id)
+        # Optionally, you can also display a success message
+
+    return redirect('event_detail', event_id=event_id)  # Redirect to the event detail page
+
+@login_required
+def user_registered_events(request):
+    user = request.user
+    registered_events = Event.objects.filter(registration__user=user)
+    return render(request, 'events/registered_events.html', {'registered_events': registered_events})

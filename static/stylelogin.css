@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(loginbg.jpg) no-repeat;
+    background: url(images/loginbg.jpg) no-repeat;
     background-size: cover;
     background-position: center ;
 }
@@ -93,6 +93,7 @@ body{
     border: none;
     outline: none;
     border-radius: 40px;
+    margin-top: 20px;
     box-shadow: 0 0 10px rgb(0, 0, 0,.1);
     cursor: pointer;
     font-size: 16px;
@@ -114,4 +115,14 @@ body{
 
 .register-link p a :hover{
     text-decoration: underline;
+}
+
+.error {
+    border: 1px solid red;
+    background-color: #ffeeee;
+    padding: 5px;
+    margin: 5px;
+    color: rgb(65, 0, 0);
+    border-radius: 5px;
+    position: relative;
 }
