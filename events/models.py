@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Event(models.Model):
     event_name = models.CharField(max_length=255)
     event_description = models.TextField()
+    host_details = models.TextField(default='Tell about yourself')
     event_time = models.DateTimeField()
     event_location = models.CharField(max_length=255)
     event_fee = models.IntegerField(default=0)

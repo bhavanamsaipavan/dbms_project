@@ -1,22 +1,27 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event details</title>
-    <link rel="stylesheet" href="{% static 'events/event_details' %}">
+    <link rel="stylesheet" href="{% static 'events/event_details.css' %}">
 </head>
 <body>
     <div class="hero">
-        <img src="{% static 'images/loginbg.jpg' %}" alt="Hero Image" class="hero-image" />
+        <div class="hero-image">
+            <img src="{% static 'images/loginbg.jpg' %}" alt="Hero Image" class="image" />
+            <a href="{% url 'event_list' %}" class="back-button">Back to Event List</a>
+        </div>
         <div class="hero-content">
             <h1>{{ event.event_name }}</h1>
+            <h3>Event description:</h3>
             <p>{{ event.event_description }}</p>
-            <p>Time: {{ event.event_time }}</p>
-            <p>Location: {{ event.event_location }}</p>
-            <p>Fee: {{ event.event_fee }}</p>
+            <h3>About Host:</h3>
+            <p>{{ event.host_details }}</p> <br>
+            <p>Time: {{ event.event_time }}</p> <br>
+            <p>Location: {{ event.event_location }}</p><br>
+            <p>Entry Fee: {{ event.event_fee }}</p> <br>
             {% if already_registered %}
                 <p>You're already registered for this event.</p>
             {% else %}
@@ -25,7 +30,9 @@
                     <button type="submit">Register for this event</button>
                 </form>
             {% endif %}
+            
         </div>
     </div>
 </body>
 </html>
+

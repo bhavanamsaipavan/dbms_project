@@ -63,7 +63,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
-  background-color: #001032;
+  background-color: #000a22;
   background-image: url("images/backgroundnight2.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -306,7 +306,13 @@ img {
   padding: 20px;
   margin: 0 20px;
 }
-
+.banner{
+  margin-top: 50px;
+  padding: 20px 30px;
+}
+.banner p{
+  padding-right: 20vw;
+}
 .context h1 {
   font-size: 30px;
   font-family: "Orbitron", sans-serif;
@@ -469,6 +475,15 @@ footer {
   .des__img-2,
   .des__img-3 {
     width: auto;
+  }
+  .banner p{
+    padding-right: 0;
+  }
+  .context {
+    padding: 20px 0;
+  }
+  .context h1 {
+    font-size: 20px;
   }
 }
 /*=============== BREAKPOINTS ===============*/
@@ -674,3 +689,4 @@ footer {
     transform: translateX(0);
   }
 }
+

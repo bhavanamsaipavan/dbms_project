@@ -54,9 +54,9 @@
           <div class="nav__buttons">
             <!-- <a href="#" class="nav__button-link">Login</a> -->
             {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}" class="nav__button-ghost">Logout</a>
+            <a href="{% url 'logout' %}" class="nav__button-ghost">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
             {% else %}
-            <a href="{% url 'login' %}" class="nav__button-ghost">Login</a>
+            <a href="{% url 'login' %}" class="nav__button-ghost">Login <i class="fa-solid fa-right-to-bracket"></i></a>
             {% endif %}
           </div>
           <div class="nav__close" id="nav-close">
@@ -102,6 +102,10 @@
         </div>
       </section>
       <div class="abc">
+        <div class="context banner">
+          <h1>Welcome to Entertainment District</h1>
+          <p>Where Every Event is an Experience! Our seasoned professionals specialize in crafting unforgettable gatherings tailored to your unique vision. From corporate events to milestone celebrations, we ensure every detail is executed seamlessly, promising an extraordinary experience that exceeds expectations. Explore the possibilities with Entertainment District – where every moment is designed to leave a lasting impression.</p>
+       </div>
         <div class="line line1">
           <img src="{% static "images/concert2.jpg" %}" alt="" class="des__img-1
           des__img" />
@@ -143,7 +147,7 @@
           </div>
           <a href="/contactus" class="home__button join"> Contact us </a>
         </div>
-
+    
         <p class="spon">SPONSERS</p>
         <div class="logos">
           <div class="logos-slide">

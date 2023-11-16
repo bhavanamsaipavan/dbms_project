@@ -215,14 +215,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: black; /* Set body background to black */
+  background-color:#000a22; /* Set body background to black */
   color: white; /* Set text color to white */
 }
 
 h1 {
   text-align: center;
   font-family: "Orbitron", sans-serif;
-  color: gold; /* Set title color to gold */
+  color: #ddd; /* Set title color to grey */
 }
 
 .navbar {
@@ -265,35 +265,28 @@ h1 {
 }
 
 .event-item {
-  width: 70%; /* Set the width of the event item to 70% of its container */
-  margin-bottom: 20px; /* Adjust margin for spacing between items */
-  border: 2px solid transparent; /* Initially transparent border */
-  border-radius: 10px; /* Smooth corners */
+  width: 70%;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
-  box-shadow: 0 0 20px rgba(255, 217, 0, 0.388); /* Golden shadow */
-  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); /* Cyanish shadow */
+  transition: all 0.3s ease;
+  background-color: #000a22; /* Dark blueish background color */
 }
 
 .event-item:hover {
-  box-shadow: 0 0 40px rgba(255, 215, 0, 0.9); /* Increase shadow on hover */
-  border: 2px solid rgba(255, 215, 0, 0.9); /* Neon golden border */
-  transform: translateY(-2px); /* Float effect on hover */
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.9), 0 0 20px rgba(0, 255, 255, 0.9) inset; /* Neon cyan shadow effect */
+  border: 2px solid rgba(0, 255, 255, 0.9);
+  transform: translateY(-2px);
 }
+
 
 .event-item .event-details {
   padding: 10px;
-}
-
-.event-item .event-description {
-  display: none; /* Initially hide only the event description */
-  color: white; /* Set description text color to white */
-}
-
-.event-item:hover .event-description {
-  display: block; /* Show description on hover */
 }
 
 .event-item img {
@@ -306,7 +299,7 @@ h1 {
   margin-top: 0;
   font-size: 1.2em;
   font-family: "Orbitron", sans-serif;
-  color: rgb(255, 235, 120); /* Set event name color to gold */
+  color: #ddd; /* Light gray text color */
 }
 
 .event-details p {
@@ -332,21 +325,30 @@ h1 {
   }
 }
 
-
-a.fee {
-    display: inline-block;
-    padding: 6px 10px;
-    text-decoration: none;
-    border: 2px solid #b71c1c;
-    border-radius: 15px;
-    background: linear-gradient(to bottom left, #ff0000 , #fc2d91 ); 
-    color: #fff; 
+a.fee,
+.last-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 10px;
+  text-decoration: none;
+  border: 2px solid #37517e; /* Adjusted border color to match the theme */
+  border-radius: 15px;
+  background: linear-gradient(to bottom left, #05143f, #001529); /* Adjusted gradient color to match the theme */
+  color: #fff;
 }
 
-a.fee:hover {
-    background: linear-gradient(to bottom left,  #fc2d91 ,  #ff0000); 
-    color: #aeaeae; 
+.last-btn {
+  margin: 0 15px;
+  border-radius: 5px;
 }
+
+a.fee:hover,
+.last-btn:hover {
+  background: linear-gradient(to bottom left, #001529, #05143f); /* Adjusted hover gradient color */
+  color: #aeaeae;
+  border-color: rgb(3, 95, 187); /* Adjusted hover border color to match the theme */
+}
+
 
 /* Adjusted CSS for the View Details button */
 .event-item {

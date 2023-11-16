@@ -1,58 +1,78 @@
-/* Reset some default browser styles */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap");
 body {
+    background-color: #000a22;
+    color: #ddd; /* Light gray text color */
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Added a default font */
 }
 
-/* Styling for the hero section */
 .hero {
     position: relative;
-    height: 50vh;
-    width: 10vw;
+}
+
+.hero-image {
+    height: 50vh; /* Display only upper half of the image */
     overflow: hidden;
 }
 
-/* Styling for the hero image */
-.hero-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: auto;
+.image {
     width: 100%;
-    max-width: 100%;
-    max-height: 100%;
+    display: block;
+    object-fit: cover; /* Ensure the image covers the entire container */
 }
 
-/* Styling for the hero content */
 .hero-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* Text color for better visibility */
+    padding: 60px;
+    box-sizing: border-box; /* Include padding in width calculations */
+    text-align: left; /* Align text to the left */
+    background-color: rgba(0, 0, 0, 0.7); /* Added a semi-transparent background to the content */
+    border-radius: 10px; /* Rounded corners for the content */
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+.hero-content h1 {
+    color: #fff; /* White color for heading */
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.5em; /* Increased font size for the heading */
 }
 
-p {
-    font-size: 1em;
-    margin-bottom: 5px;
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6; /* Improved line spacing for better readability */
+    margin: 10px 0;
 }
 
-button {
-    padding: 8px 16px;
-    font-size: 1em;
-    background-color: #007bff; /* Button color */
-    color: #fff; /* Text color on the button */
-    border: none;
+.hero-content form button {
+    background-color: #05143f; /* Dark blue button background */
+    color: #fff; /* White text color */
+    padding: 12px 24px; /* Increased padding for the button */
     cursor: pointer;
+    border: 2px solid #37517e; /* Adjusted border color to match the theme */
+    border-radius: 12px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.hero-content form button:hover {
+    background-color: #37517e; /* Darker blue hover background color */
+    box-shadow: 0 0 8px 4px #0f2e5b; /* Improved glowing effect on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Position at the top-right corner with more spacing */
+    text-decoration: none;
+    background-color: #05143f; /* Dark blue background */
+    color: #fff; /* White text color */
+    padding: 12px 24px; /* Increased padding for the button */
+    cursor: pointer;
+    border: 2px solid #37517e; /* Adjusted border color to match the theme */
+    border-radius: 12px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.back-button:hover {
+    background-color: #37517e; /* Darker blue hover background color */
+    box-shadow: 0 0 8px 4px #0f2e5b; /* Improved glowing effect on hover */
 }

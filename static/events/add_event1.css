@@ -1,32 +1,32 @@
-/* styles.css */
-
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap");
 body {
     font-family: Arial, sans-serif;
-    background-color: #000; /* Black background */
-    color: #FFD700; /* Gold text color */
+    background-color: #000a22; /* Dark blueish background */
+    color: #ddd; /* Light gray text color */
     margin: 0;
     padding: 20px;
 }
 
 form {
-    background-color: #1C1C1C; /* Dark gray for form background */
-    color: #FFD700; /* Gold text color */
-    padding: 20px;
+    background-color: #05143f5c; /* Dark blue for form background */
+    color: #ddd; /* Light gray text color */
+    padding: 25px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 217, 0, 0.516); /* Slightly brighter gold shadow */
-    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.516); /* Cyanish shadow */
+    max-width: 600px;
     margin: 0 auto;
 }
 
 h1 {
+    font-family: "Orbitron", sans-serif;
     text-align: center;
-    color: #FFD700; /* Gold color for heading */
+    color: #ddd; /* Light gray color for heading */
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    color: #c5c5c5; /* Gold color for labels */
+    color: #c5c5c5; /* Light gray color for labels */
 }
 
 input[type="text"],
@@ -36,32 +36,31 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid #A9A9A9; /* Gray border color */
     border-radius: 4px;
-    color: #dcdcdc; /* Black text color */
+    color: #dcdcdc; /* Light gray text color */
     background-color: #1C1C1C; /* Dark gray background for inputs */
 }
 
 button[type="submit"] {
-    background-color: #fff3ae; /* Gold button background */
-    color: #000; /* Black text color */
+    background-color: #05143f; /* Dark blue button background */
+    color: #fff; /* White text color */
     padding: 10px 20px;
-    border: 1px solid #A9A9A9; /* Gray border for the button */
+    border: 1px solid #37517e; /* Adjusted border color to match the theme */
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
 }
 
 button[type="submit"]:hover {
-    background-color: #FFD700; /* Gold hover background color */
-    border: 1px solid #A9A9A9; /* Gray border for the button on hover */
-    box-shadow: 0 0 3px 2px #FFD700; /* Adding a glowing effect on hover */
+    background-color: #37517e; /* Darker blue hover background color */
+    border: 1px solid #1c1c1c; /* Adjusted border color on hover */
+    box-shadow: 0 0 3px 2px #0f2e5b; /* Adjusted glowing effect on hover */
     transform: scale(1.1); /* Slightly scale up on hover */
 }
-
 
 input[type="text"]:focus,
 textarea:focus {
     transition: border-color 0.3s ease-in-out; /* Smooth transition */
-    border-color: #FFD700; /* Change border color on focus to gold */
+    border-color: #0f2e5b; /* Darker blue border color on focus */
 }
 
 /* Optional: Fading in the form */
@@ -78,4 +77,3 @@ form {
         opacity: 1;
     }
 }
-

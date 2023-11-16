@@ -58,26 +58,27 @@
       </header>
 
     <h1>List of Events</h1>
-    <a href="{% url 'my_registered_events' %}" class="fee" >View My registered events</a>
     <ul class="event-list">
-        {% for event in events %}
+      {% for event in events %}
             <li class="event-item">
-                <img src="././media/{{ event.event_image }}" alt="{{ event.event_name }} Image">
-                <div class="event-details">
-                    <h2>{{ event.event_name }}</h2>
-                    <p class="event-description">{{ event.event_description }}</p>
-                    <p><b>{{ event.event_time }} {{ event.event_location }}</b></p>
-                    <a href="#" class="fee"> 
-                    {% if event.event_fee and event.event_fee != 0 %}Fee: ${{event.event_fee}} 
-                    {% else %}  Free Event
-                    {% endif %}
-                    </a>
-                    <a href="{% url 'event_detail' event.id %}" class="view-details-button">View Details</a>
-                </div>
+              <img src="././media/{{ event.event_image }}" alt="{{ event.event_name }} Image">
+              <div class="event-details">
+                <h2>{{ event.event_name }}</h2>
+                <p><b>{{ event.event_time }} {{ event.event_location }}</b></p>
+                <a href="#" class="fee"> 
+                  {% if event.event_fee and event.event_fee != 0 %}Fee: ${{event.event_fee}} 
+                  {% else %}  Free Event
+                  {% endif %}
+                </a>
+                <a href="{% url 'event_detail' event.id %}" class="view-details-button">View Details</a>
+              </div>
             </li>
-        {% endfor %}
-        <a href="{% url 'add_event' %}" class="fee" >Want to host a Event?</a>
-    </ul>
-    <script src="{% static 'script.js' %}"></script>
+            {% endfor %}
+            <li >
+            <a href="{% url 'add_event' %}" class="last-btn" >Host a Event</a>
+            <a href="{% url 'my_registered_events' %}" class="last-btn" >registered events</a>
+            </li>
+          </ul>
+          <script src="{% static 'script.js' %}"></script>
 </body>
 </html>
