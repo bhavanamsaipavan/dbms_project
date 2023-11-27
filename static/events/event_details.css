@@ -8,6 +8,7 @@ body {
 }
 
 .hero {
+    background-color: #000a22;
     position: relative;
 }
 
@@ -26,8 +27,10 @@ body {
     padding: 60px;
     box-sizing: border-box; /* Include padding in width calculations */
     text-align: left; /* Align text to the left */
-    background-color: rgba(0, 0, 0, 0.7); /* Added a semi-transparent background to the content */
+    background-color: rgba(0, 0, 0, 0.105); /* Added a semi-transparent background to the content */
     border-radius: 10px; /* Rounded corners for the content */
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.9) inset; /* Neon cyan shadow effect */
+    border: 2px solid rgba(0, 255, 255, 0.9);
 }
 
 .hero-content h1 {
@@ -57,11 +60,13 @@ body {
     box-shadow: 0 0 8px 4px #0f2e5b; /* Improved glowing effect on hover */
     transform: scale(1.05); /* Slightly scale up on hover */
 }
-
-.back-button {
+.back{
     position: absolute;
     top: 20px;
-    right: 20px; /* Position at the top-right corner with more spacing */
+    right: 20px; 
+    /* Position at the top-right corner with more spacing */
+}
+.back-button {
     text-decoration: none;
     background-color: #05143f; /* Dark blue background */
     color: #fff; /* White text color */

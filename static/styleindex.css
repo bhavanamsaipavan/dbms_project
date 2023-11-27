@@ -333,9 +333,11 @@ img {
   max-width: 100%;
   height: auto;
   width: 40vw;
-  border-radius: 5px;
-  border: 2px solid rgb(255, 201, 102);
-  box-shadow: 5px 5px 5px rgba(255, 201, 102, 0.6);
+  border-radius: 15px;
+  /* border: 2px solid rgb(255, 201, 102);
+  box-shadow: 5px 5px 5px rgba(255, 201, 102, 0.6); */
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.6), 3px 3px 3px rgba(0, 255, 255, 0.6) inset; /* Neon cyan shadow effect */
+  border: 2px solid rgba(0, 255, 255, 0.9);
 }
 
 .des__img-1,
@@ -435,38 +437,103 @@ img {
 
 /* ============== FOOTER =============== */
 footer {
-  background-color: rgb(192, 192, 192);
+  background-color: #00193a; /* Darker shade of the body color */
   padding: 15px;
-  text-align: center;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   opacity: 0;
   position: relative;
   transform: translateY(50%);
   transition: all 1.5s;
 }
+
+.about,
+.social,
+.Contact_me {
+  margin: 10px;
+}
+
+.about,
+.Contact_me {
+  flex: 1;
+  color: #ccc;
+}
+
+.about h2,
+.social h3,
+.Contact_me h2 {
+  color: #fff;
+}
+
 .descp {
-  width: 400px;
-  padding-top: 15px;
+  font-size: 14px;
 }
-.social {
-  display: flex;
-  flex-direction: column;
-  padding-top: 15px;
-  justify-content: space-around;
+
+.devloper p {
+  margin: 10px 0;
 }
-.devloper {
-  padding-top: 15px;
+
+.icon {
+  color: #fff;
+  margin-right: 10px;
 }
-.social h3 {
+
+.icon a {
   display: inline-block;
 }
-.copyright {
-  width: 80vw;
-  padding-top: 15px;
+
+.icon i {
+  margin-right: 5px;
 }
+
+.f_link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.context12 {
+  flex: 2;
+  margin-right: 20px;
+}
+
+.footer_btn {
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: filter 0.3s ease; /* Use filter for a subtle color change */
+}
+
+.footer_btn:hover {
+  filter: brightness(90%); /* Slightly reduce brightness on hover */
+}
+
+.f_link,
+.icon {
+  transition: color 0.3s ease; /* Add transition for smoother color change on hover */
+}
+
+.f_link:hover,
+.icon:hover {
+  color: #00a2ffad; /* Change color on hover to a different shade (you can adjust the color code) */
+}
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  color: #ccc;
+  width: 90vw;
+  padding-top: 15px;
+  border-top: 1px solid #fff;
+}
+
+
 @media screen and (max-width: 570px) {
   .descp {
     width: 90vw;

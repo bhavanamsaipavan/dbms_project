@@ -31,7 +31,7 @@
               </li>
   
               <li class="nav__item">
-                <a href="#" class="nav__link">Accomodation</a>
+                <a href="{% url 'room_list' %}" class="nav__link">Accomodation</a>
               </li>
   
               <li class="active">
@@ -56,22 +56,27 @@
         </nav>
       </header>
     <div class="wrraper">
-        <form action="">
-            <h1>Contact us</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Name" required>
-            </div>
-            <div class="input-box">
-                <input type="text" placeholder="email ID" required>
-            </div> 
-            <div class="input-box">
-                <input type="text" placeholder="subject" required>
-            </div> 
-            <div class="input-box" style="height: 150px;">
-                <input type="text" placeholder="message/feedback" required>
-            </div> 
-            <button type="submit" class="btn">Submit</button>
-        </form>
+      <form method="post" action="{% url 'contact_us' %}">
+        {% csrf_token %}
+        <h1>Contact us</h1>
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Name" required />
+        </div>
+        <div class="input-box">
+          <input type="email" name="email" placeholder="Email ID" required />
+        </div>
+        <div class="input-box">
+          <input type="text" name="subject" placeholder="Subject" required />
+        </div>
+        <div class="input-box " style="height:150px">
+          <textarea
+            name="query"
+            placeholder="Message/Feedback"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
     </div>
     <div class="wrraper-2">
         <p class="info">

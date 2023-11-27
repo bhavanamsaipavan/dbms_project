@@ -44,7 +44,7 @@
             </li>
 
             <li class="nav__item">
-              <a href="#" class="nav__link">Accomodation</a>
+              <a href="/rooms" class="nav__link">Accomodation</a>
             </li>
 
             <li class="nav__item">
@@ -54,9 +54,13 @@
           <div class="nav__buttons">
             <!-- <a href="#" class="nav__button-link">Login</a> -->
             {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}" class="nav__button-ghost">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
+            <a href="{% url 'logout' %}" class="nav__button-ghost"
+              >Logout <i class="fa-solid fa-right-from-bracket"></i
+            ></a>
             {% else %}
-            <a href="{% url 'login' %}" class="nav__button-ghost">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+            <a href="{% url 'login' %}" class="nav__button-ghost"
+              >Login <i class="fa-solid fa-right-to-bracket"></i
+            ></a>
             {% endif %}
           </div>
           <div class="nav__close" id="nav-close">
@@ -83,29 +87,35 @@
                 DISTRICT
               </h1>
               <p class="home__description">Events To Remember</p>
-              <a href="#" class="home__button"> Get Ticket </a>
+              <a href="{% url 'event_list' %}" class="home__button">
+                Get Ticket
+              </a>
             </div>
             <img src="{% static "images/bird-1.svg" %}" alt="image"
             class="home__bird-1" /> <img src="{% static "images/bird-2.svg" %}"
             alt="image" class="home__bird-2" />
           </div>
           <div class="home__images">
-            <img src="{% static "images/img-4.svg" %}" alt="image"
-            class="home__img-4" /> 
-            <img src="{% static "images/img-3.svg" %}" alt="image" 
-            class="home__img-3" /> 
-            <img src="{% static "images/img-2.svg" %}" alt="image" 
-            class="home__img-2" /> 
-            <img src="{% static "images/img-1.svg" %}" alt="image"
-            class="home__img-1" />
+            <img src="{% static "images/img-4.svg" %}" alt="image" class="home__img-4" /> 
+            <img src="{% static "images/img-3.svg" %}" alt="image" class="home__img-3" /> 
+            <img src="{% static "images/img-2.svg" %}" alt="image" class="home__img-2" /> 
+            <img src="{% static "images/img-1.svg" %}" alt="image" class="home__img-1" />
           </div>
         </div>
       </section>
       <div class="abc">
         <div class="context banner">
           <h1>Welcome to Entertainment District</h1>
-          <p>Where Every Event is an Experience! Our seasoned professionals specialize in crafting unforgettable gatherings tailored to your unique vision. From corporate events to milestone celebrations, we ensure every detail is executed seamlessly, promising an extraordinary experience that exceeds expectations. Explore the possibilities with Entertainment District – where every moment is designed to leave a lasting impression.</p>
-       </div>
+          <p>
+            Where Every Event is an Experience! Our seasoned professionals
+            specialize in crafting unforgettable gatherings tailored to your
+            unique vision. From corporate events to milestone celebrations, we
+            ensure every detail is executed seamlessly, promising an
+            extraordinary experience that exceeds expectations. Explore the
+            possibilities with Entertainment District – where every moment is
+            designed to leave a lasting impression.
+          </p>
+        </div>
         <div class="line line1">
           <img src="{% static "images/concert2.jpg" %}" alt="" class="des__img-1
           des__img" />
@@ -140,14 +150,7 @@
             </p>
           </div>
         </div>
-        <div class="line joinus">
-          <div class="context">
-            <h1>Interested in hosting with us?</h1>
-            <p>Become a part of our team. Contact us for further details.</p>
-          </div>
-          <a href="/contactus" class="home__button join"> Contact us </a>
-        </div>
-    
+
         <p class="spon">SPONSERS</p>
         <div class="logos">
           <div class="logos-slide">
@@ -206,40 +209,60 @@
 
     <footer class="footer">
       <div class="about">
+        <h2>Entertainment District</h2>
         <p class="descp">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. A possimus
-          assumenda dolorum delectus, iure, mollitia placeat neque nulla natus
-          accusamus asperiores laboriosam, animi eaque quidem culpa. Sit minima
-          omnis accusamus commodi dolorum reiciendis debitis.
+          Where Every Event is an Experience! Our seasoned professionals
+          specialize in crafting unforgettable gatherings tailored to your
+          unique vision. From corporate events to milestone celebrations, we
+          ensure every detail is executed seamlessly, promising an extraordinary
+          experience that exceeds expectations. Explore the possibilities with
+          Entertainment District – where every moment is designed to leave a
+          lasting impression.
         </p>
-      </div>
-      <div class="social">
-        <a href="#" class="icon">
-          <i class="fa-brands fa-linkedin"></i>
-          <h3>Linked In</h3>
-        </a>
-        <a href="https://www.instagram.com/vinay_c09/" class="icon">
-          <i class="fa-brands fa-instagram"></i>
-          <h3>instagram</h3>
-        </a>
-        <a href="#" class="icon">
-          <i class="fa-brands fa-twitter"></i>
-          <h3>Twitter</h3>
-        </a>
-        <a href="#" class="icon">
-          <i class="fa-brands fa-facebook"></i>
-          <h3>Facebook</h3>
-        </a>
-      </div>
-      <div class="devloper">
-        <p class="info">
-          Contact-us <br />
-          <i class="fa-solid fa-user"></i> Dark Soul <br />
-          web and over all codinator <br />
-          <i class="fa-solid fa-phone"></i> 6301780884 <br />
+        <div class="devloper">
+          <i class="fa-solid fa-phone"></i> 6301780884
+          <br />
           <i class="fa-solid fa-envelope"></i>
           cse220001021@iiti.ac.in
-        </p>
+          <br />
+          <a href="#" class="icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/vinay_c09/" class="icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="icon">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="#" class="icon">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+      <div class="social">
+        <h3>Quick links</h3>
+        <a href="#" class="f_link">
+          <h4>- Events</h4>
+        </a>
+        <a href="#" class="f_link">
+          <h4>- Accomodationm</h4>
+        </a>
+        <a href="#" class="f_link">
+          <h4>- Contact_us</h4>
+        </a>
+        <a href="#" class="f_link">
+          <h4>- Login</h4>
+        </a>
+        <a href="#" class="f_link">
+          <h4>- Terms and Conditions</h4>
+        </a>
+      </div>
+      <div class="Contact_me">
+        <div class="context12">
+          <h2>Interested in hosting with us?</h2>
+          <p>Become a part of our team. Contact us for further details.</p>
+        </div>
+        <a href="/contactus" class="footer_btn"> Contact us </a>
       </div>
       <div class="copyright">
         Hawk-Eye | All rights reserved <i class="bx bx-copyright"></i> 2023

@@ -5,7 +5,9 @@ from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 import uuid
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def CheckOut(request, event_id):
 
     event = Event.objects.get(id=event_id)

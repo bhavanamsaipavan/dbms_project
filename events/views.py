@@ -24,13 +24,16 @@ def event_list(request):
     events = Event.objects.order_by('event_time')
     return render(request, 'events/event_list.html', {'events': events})
 
-@login_required
 def event_detail(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
-    user = request.user
-
     # Check if the user is already registered for the event
-    already_registered = Registration.objects.filter(user=user, event=event).exists()
+    
+    if request.user.is_authenticated:
+        user = request.user
+        already_registered = Registration.objects.filter(user=user, event=event).exists()
+    else:
+        user = None
+        already_registered = False
 
     return render(request, 'events/event_details.html', {
         'event': event,

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'events',
+    'rooms',
+    'contactus',
     'user_app',
     'PaymentApp',
     'paypal.standard.ipn',
@@ -137,6 +139,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP host
+EMAIL_PORT = 587  # Replace with your SMTP port
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'vinaycherupally1@gmail.com'  # Replace with your sender email
+EMAIL_HOST_PASSWORD = 'rpfu rygu rcyw vxzg'  # Replace with your email password or an application-specific password
 
 
 # Static files (CSS, JavaScript, Images)

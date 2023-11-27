@@ -24,8 +24,9 @@ from web import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='HOME'),
-    path('contactus/', views.contactus, name='contactus'),
+    path('contactus/', include('contactus.urls')), 
     path('events/', include('events.urls')),  # Include the app's URLs
+    path('rooms/', include('rooms.urls')), 
     path('user/', include('user_app.urls')),
     path('', include('PaymentApp.urls')),
     path('', include('paypal.standard.ipn.urls')),

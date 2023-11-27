@@ -215,7 +215,7 @@ body {
     padding: 30px 40px;
 }
 
-.input-box input {
+.input-box input, textarea {
   width: 100%;
   height: 100%;
   background: transparent;

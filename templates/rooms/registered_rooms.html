@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your room </title>
+    <link rel="stylesheet" href="{% static 'events/event_list.css' %}">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+   />
+</head>
+<body>
+    <h1>rooms Registered by {{ request.user.username }}</h1>
+    <a href="{% url 'room_list' %}" class="last-btn" ><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Return</a>
+    <ul class="event-list">
+        {% for room in hotels_objs %}
+        <li class="event-item">
+          <div class="event-details">
+            <h2>{{ room.hotel_name }}</h2>
+            <p><b>Amenities: {{ room.amenities }}</b></p>
+            {% comment %} <a href="{% url 'room_detail' room.uid %}" class="fee"> 
+              Price: ${{room.hotel_price}} 
+            </a> {% endcomment %}
+            <a href="{% url 'room_detail' room.uid %}" class="view-details-button">View Details</a>
+          </div>
+        </li>
+        {% empty %}
+            <li class="event-item">No rooms registered yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

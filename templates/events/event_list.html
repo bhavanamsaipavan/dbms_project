@@ -28,15 +28,15 @@
               </li>
   
               <li class="active">
-                <a href="" class="nav__link">Events</a>
+                <a href="{% url 'event_list' %}" class="nav__link">Events</a>
               </li>
   
               <li class="nav__item">
-                <a href="#" class="nav__link">Accomodation</a>
+                <a href="{% url 'room_list' %}" class="nav__link">Accomodation</a>
               </li>
   
               <li class="nav__item">
-                <a href="{% url 'contactus' %}" class="nav__link">Contact-us</a>
+                <a href="{% url 'contact_us' %}" class="nav__link">Contact-us</a>
               </li>
             </ul>
             <div class="nav__buttons">
@@ -65,7 +65,7 @@
               <div class="event-details">
                 <h2>{{ event.event_name }}</h2>
                 <p><b>{{ event.event_time }} {{ event.event_location }}</b></p>
-                <a href="#" class="fee"> 
+                <a href="{% url 'event_detail' event.id %}" class="fee"> 
                   {% if event.event_fee and event.event_fee != 0 %}Fee: ${{event.event_fee}} 
                   {% else %}  Free Event
                   {% endif %}
@@ -74,10 +74,12 @@
               </div>
             </li>
             {% endfor %}
+            {% if user.is_authenticated %}
             <li >
             <a href="{% url 'add_event' %}" class="last-btn" >Host a Event</a>
             <a href="{% url 'my_registered_events' %}" class="last-btn" >registered events</a>
             </li>
+            {% endif %}
           </ul>
           <script src="{% static 'script.js' %}"></script>
 </body>
