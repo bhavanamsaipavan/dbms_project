@@ -15,7 +15,7 @@ BACKEND FRAMEWORK: Django
 FRONTEND TECHNOLOGIES: HTML, CSS, JavaScript
 DATABASE: SQLite (for development), can be easily switched to other databases supported by Django.
 
-GITHUB ACCOUNT URL:
+GITHUB ACCOUNT URL:https://github.com/kvsteja2005/dbms_project
 
 USAGE
 Log in using your superuser credentials.
